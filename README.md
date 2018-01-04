@@ -1,6 +1,6 @@
 # Right season
 
-A simple react app that's mean't to answer only one question : is it the right season to buy this fruit/vegetable ?
+:green_apple: :sweet_potato: A simple react app that's mean't to answer only one question : is it the right season to buy this fruit/vegetable ?
 
 The app use the following source for month : 
 1. [https://www.greenpeace.fr/calendrier-fruits-legumes-de-saisons/](https://www.greenpeace.fr/calendrier-fruits-legumes-de-saisons/)

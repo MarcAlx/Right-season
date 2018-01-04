@@ -17,7 +17,6 @@ res = {}
 res["fruits"]=[]
 res["vegetables"]=[]
 
-#create indic -> indicators and chapter
 with open(input, newline='', encoding='utf-8') as f:
     reader = csv.reader(f,delimiter=';')
     nb = 0
