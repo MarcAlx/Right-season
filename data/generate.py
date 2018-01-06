@@ -1,5 +1,6 @@
 import json
 import csv
+import io
 
 input = "dataset.csv"
 output = "data.json"
@@ -39,7 +40,7 @@ with open(input, newline='', encoding='utf-8') as f:
 
         nb=nb+1
 
-with open(output, 'w') as f:
+with io.open(output, 'w', encoding='utf8') as f:
     f.write(json.dumps(res, indent=4, ensure_ascii=False))
 
 print("\n\n")
