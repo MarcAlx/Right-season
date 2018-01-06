@@ -1,3 +1,6 @@
+import data from "../assets/data.json";
 export const initialState = {
-    input:""
+    input:"",
+    vegetables:data.vegetables,
+    fruits:data.fruits
 };

@@ -13,6 +13,11 @@ import { search } from '../../actions/AppActions';
 
 import PropTypes from 'prop-types';
 
+import Item from '../Item/Item';
+
+import { GridList, GridListTile } from 'material-ui/GridList';
+import Subheader from 'material-ui/List/ListSubheader';
+
 const theme = createMuiTheme({
   palette: {
     primary: blue
@@ -32,33 +37,57 @@ class App extends Component {
 
   render() {
     console.log("render");
+    let vegetables = this.props.vegetables.map(
+      (item) => <Item key={item.name} data={item}/>
+    );
+    let fruits = this.props.fruits.map(
+      (item) => <Item key={item.name} data={item}/>
+    );
     return (
-      <MuiThemeProvider theme={theme}>      
-        <AppBar position="static">
-          <Toolbar>
-            <Typography type="title" color="inherit">
-              Title 
-              <TextField
-                id="searchText"
-                label="searchText"
-                onChange={(e) => this.handleSearch(e, 'searchText')}
-                margin="normal"
-              />
-            </Typography>
-          </Toolbar>
-        </AppBar>
+      <MuiThemeProvider theme={theme}>   
+        <div className="App">   
+          <AppBar position="static">
+            <Toolbar>
+              <Typography type="title" color="inherit">
+                Title 
+                <TextField
+                  id="searchText"
+                  label="searchText"
+                  onChange={(e) => this.handleSearch(e, 'searchText')}
+                  margin="normal"
+                />
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <GridList>
+            <GridListTile className="header" key="Subheader" cols={4}>
+              <Subheader component="div">Légumes</Subheader>
+            </GridListTile>
+            {vegetables}
+          </GridList>
+          <GridList>
+            <GridListTile className="header" key="Subheader" cols={4}>
+              <Subheader component="div">Fruits</Subheader>
+            </GridListTile>
+            {fruits}
+          </GridList>
+        </div>
       </MuiThemeProvider>
     );
   }
 }
 
 App.propTypes={
-  search: PropTypes.func.isRequired
+  search: PropTypes.func.isRequired,
+  vegetables:PropTypes.array,
+  fruits:PropTypes.array
 };
 
 const mapStateToProps = (state) => {
   return {
-    input:state.input
+    input:state.input,
+    vegetables:state.vegetables,
+    fruits:state.fruits
   };
 };
 
