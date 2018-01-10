@@ -7,7 +7,7 @@ import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 
-import * as config from '../../Config';
+import i18n from 'i18next';
 
 /**
  * Component mean't to display data about a Fruit or a Vegetable
@@ -19,7 +19,7 @@ class Item extends Component {
 
   render() {
     let monthTags = this.props.data.month.map(
-        month=><span className="monthTag" key={month}>{config.indexToMonth[month]}</span>
+        month=><span className="monthTag" key={month}>{i18n.t("monthIndexes."+month)}</span>
     )
     return (
         <div className="Item">
@@ -41,10 +41,10 @@ class Item extends Component {
                 </CardContent>
                 <CardActions>
                     <Button target="_blank" href={this.props.data.url} dense color="primary">
-                        Wikipédia
+                        {i18n.t("item.urlButtonTitle")}
                     </Button>
-                    <Button target="_blank" href={config.recipeBaseURL+this.props.data.name} dense color="primary">
-                        Recettes
+                    <Button target="_blank" href={i18n.t("receipProvider.baseURL")+this.props.data.name} dense color="primary">
+                        {i18n.t("item.receipButtonTitle")}
                     </Button>
                 </CardActions>
             </Card>

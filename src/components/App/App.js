@@ -18,6 +18,8 @@ import Item from '../Item/Item';
 import { GridList, GridListTile } from 'material-ui/GridList';
 import Subheader from 'material-ui/List/ListSubheader';
 
+import i18n from 'i18next';
+
 const theme = createMuiTheme({
   palette: {
     primary: blue
@@ -45,11 +47,11 @@ class App extends Component {
     );
     return (
       <MuiThemeProvider theme={theme}>   
-        <div className="App">   
+        <div className="App">
+          <h1>{i18n.t('title')}</h1>
           <AppBar position="static">
             <Toolbar>
               <Typography type="title" color="inherit">
-                Title 
                 <TextField
                   id="searchText"
                   label="searchText"

@@ -51,6 +51,9 @@ To run your code locally like in relase with minified and compressed sources (on
 https://material-ui-next.com/
 https://appdividend.com/2017/08/23/redux-tutorial-example-scratch/
 
+## i18n
+
+i18n is done thanks to `react-i18next` for now there's only one supported locale : `fr-FR`. If you want to contribute by adding a new locale. Everything goes in `src/components/i18n/translations`.
 ## Based on 
 
 [This toolkit](https://github.com/MarcAlx/simple-react-starterkit)
