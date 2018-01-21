@@ -3,12 +3,16 @@ import csv
 import io
 import sys
 import os
+from pathlib import Path
 
 input = ""
+output = ""
+source = ""
 if(len(sys.argv)>1):
     if(os.path.isfile(sys.argv[1])):
         input = sys.argv[1]
         output = sys.argv[1].replace(".csv",".json")
+        source = Path(sys.argv[1]).stem
     else:
         print(sys.argv[1]+" not found")
         sys.exit()
@@ -58,6 +62,7 @@ with open(input, newline='', encoding='utf-8') as f:
                 res["cereals"].append(item)
         nb=nb+1
 
+res["source"]=source
 with io.open(output, 'w', encoding='utf8') as f:
     f.write(json.dumps(res, indent=4, ensure_ascii=False))
 
