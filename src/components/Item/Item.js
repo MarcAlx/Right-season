@@ -18,7 +18,7 @@ class Item extends Component {
   }
 
   render() {
-    let monthTags = this.props.data.month.map(
+    let monthTags = this.props.data.availability.map(
         month=><span className="monthTag" key={month}>{i18n.t("monthIndexes."+month)}</span>
     )
     return (
@@ -26,12 +26,12 @@ class Item extends Component {
             <Card className="card">
                 <CardMedia
                 className="media"
-                image={this.props.data.image}
-                title={this.props.data.name}
+                image={"assets/images/"+this.props.data.image_url}
+                title={i18n.t("names."+this.props.data.name)}
                 />
                 <CardContent>
                     <Typography type="headline" component="h2">
-                        {this.props.data.name}
+                        {i18n.t("names."+this.props.data.name)}
                     </Typography>
                     <Typography type="headline" component="h2">
                         <div>

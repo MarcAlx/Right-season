@@ -31,6 +31,10 @@ class App extends Component {
     super(props);
     this.handleSearch=this.handleSearch.bind(this);
   }
+
+  componentDidMount(){
+    
+  }
   
   handleSearch(event) {
     console.log(event.target.value);
@@ -43,6 +47,12 @@ class App extends Component {
       (item) => <Item key={item.name} data={item}/>
     );
     let fruits = this.props.fruits.map(
+      (item) => <Item key={item.name} data={item}/>
+    );
+    let cereals = this.props.cereals.map(
+      (item) => <Item key={item.name} data={item}/>
+    );
+    let mushrooms = this.props.mushrooms.map(
       (item) => <Item key={item.name} data={item}/>
     );
     return (
@@ -73,6 +83,18 @@ class App extends Component {
             </GridListTile>
             {fruits}
           </GridList>
+          <GridList>
+            <GridListTile className="header" key="Subheader" cols={4}>
+              <Subheader component="div">Champignons</Subheader>
+            </GridListTile>
+            {mushrooms}
+          </GridList>
+          <GridList>
+            <GridListTile className="header" key="Subheader" cols={4}>
+              <Subheader component="div">Céréales</Subheader>
+            </GridListTile>
+            {cereals}
+          </GridList>
         </div>
       </MuiThemeProvider>
     );
@@ -82,14 +104,18 @@ class App extends Component {
 App.propTypes={
   search: PropTypes.func.isRequired,
   vegetables:PropTypes.array,
-  fruits:PropTypes.array
+  fruits:PropTypes.array,
+  mushrooms:PropTypes.array,
+  cereals:PropTypes.array
 };
 
 const mapStateToProps = (state) => {
   return {
     input:state.input,
-    vegetables:state.vegetables,
-    fruits:state.fruits
+    vegetables:state.currentData.vegetables,
+    fruits:state.currentData.fruits,
+    cereals:state.currentData.cereals,
+    mushrooms:state.currentData.mushrooms,
   };
 };
 

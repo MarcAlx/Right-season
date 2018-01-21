@@ -1,6 +1,15 @@
-import data from "../assets/data.json";
+import innerConfig from "../innerConfig";
 export const initialState = {
     input:"",
-    vegetables:data.vegetables,
-    fruits:data.fruits
+    //all data loaded
+    allData:{},
+    //current data displayed
+    currentData:{
+        vegetables:[],
+        fruits:[],
+        mushrooms:[],
+        cereals:[]
+    },
+    config:innerConfig,
+    source:""
 };
