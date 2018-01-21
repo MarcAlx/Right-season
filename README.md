@@ -13,7 +13,7 @@ The app use the following source for data :
 
 2. Common knowledge
 
-App is based on data for France.
+For now app only provides data for France, but it's mean't to be extensible in term of data and localization. (See F.A.Q below for contribution or extensibility)
 
 Images has been found on : 
 
@@ -75,6 +75,8 @@ To run your code locally like in relase with minified and compressed sources (on
 
 **Q 1. How to contribute ?**
 
+You can contribute for everything : functionnalities/bug fix/new language support/data for a new country.
+
 First read the whole F.A.Q. Fork the project then make a pull request.
 
 If you add new images it must be [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.fr) if the images are yours you accept that it becomes CC0.
@@ -87,11 +89,11 @@ Translation is provided via `translations.json` saved in `src/assets/i18n/`. Edi
 
 **Q 3. How to add new data ?**
 
-1. Fill a new xls file like the one provided in `data` : do not change first column.
+1. Fill a new xls file like the one provided in `/data` : do not change first column.
 
 2. Generate json file. (see Q. 4)
 
-3. Put file in `src/assets/data/`
+3. Put generated json file in `src/assets/data/`
 
 4. Edit `src/assets/config.json` in order to reference your new file.
 
@@ -105,7 +107,7 @@ To generate json what you have to do is go to `data` folder an run with python 3
 
 **Q 5. How to add new entry ?**
 
-1. Add new entry in data 
+1. Add new entry in `data` and generate json.
 
 2. Add i18n key in `names` object. The key must be equal to first column of xlsx.
 
