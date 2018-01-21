@@ -1,7 +1,7 @@
-export const translation = {
+{
     "fr-FR": {
         "translation": {
-            "name":{
+            "names":{
                 "morel": "Morille",
                 "passion-fruit": "Fruit de la passion",
                 "squash": "Courge",
@@ -11,7 +11,7 @@ export const translation = {
                 "artichoke": "Artichaut",
                 "jerusalem_artichoke": "Topinambour",
                 "cassis": "Cassis",
-                "barley": "Orge de printemps",
+                "barley": "Orge",
                 "spinach": "Épinard",
                 "cauliflower": "Chou-fleur",
                 "celery": "Céleri",
@@ -61,7 +61,8 @@ export const translation = {
                 "chestnut": "Châtaigne",
                 "salsify": "Salsifi",
                 "cep": "Cèpe",
-                "wheat": "Blé tendre d'hiver et de printemps",
+                "wheat_hard": "Blé dur",
+                "wheat_soft": "Blé tendre",
                 "sorrel": "Oseille",
                 "hazelnut": "Noisette",
                 "tomato": "Tomate",
@@ -105,18 +106,18 @@ export const translation = {
                 "mirabelle": "Mirabelle"
             },
             "monthIndexes":{
-                1:"Janvier",
-                2:"Fevrier",
-                3:"Mars",
-                4:"Avril",
-                5:"Mai",
-                6:"Juin",
-                7:"Juillet",
-                8:"Aout",
-                9:"Septembre",
-                10:"Octobre",
-                11:"Novembre",
-                12:"Decembre"
+                "1":"Janvier",
+                "2":"Fevrier",
+                "3":"Mars",
+                "4":"Avril",
+                "5":"Mai",
+                "6":"Juin",
+                "7":"Juillet",
+                "8":"Aout",
+                "9":"Septembre",
+                "10":"Octobre",
+                "11":"Novembre",
+                "12":"Decembre"
             },
             "title":"Fruits et légumes de saison",
             "receipProvider":{
@@ -130,8 +131,8 @@ export const translation = {
         }
     },
     "en": {
-        translation: {
+        "translation": {
             "test":"this is a test"
         }
     }
-};
+}
