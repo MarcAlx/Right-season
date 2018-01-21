@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 //define output dev folders
 const outputDev = "dist/dev";
@@ -88,7 +89,14 @@ module.exports = function(env){
       new HtmlPlugin({
         template: 'src/index.html'
       }),
-      new ExtractTextPlugin('style.css') 
+      new ExtractTextPlugin('style.css'),
+      //Copy assets from source
+      new CopyWebpackPlugin([
+        { 
+          from: 'src/assets', 
+          to: 'assets' 
+        },
+      ])
     ]
   }
 
