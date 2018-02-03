@@ -20,12 +20,15 @@ class App extends Component {
     super(props);
   }
 
+  componentDidMount(){
+    document.title=i18n.t('title');
+  }
+
   render() {
     console.log("render");
     return (
       <MuiThemeProvider theme={theme}>   
         <div className="App">
-          <h1>{i18n.t('title')}</h1>
           <Bar/>
           <Grid/>
         </div>

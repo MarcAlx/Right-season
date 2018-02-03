@@ -26,7 +26,7 @@ class Bar extends Component {
 
   render() {
     return (
-      <AppBar position="static">
+      <AppBar position="fixed" className="topBar">
         <Toolbar>
           <Typography type="title" color="inherit">
             <TextField
@@ -35,6 +35,9 @@ class Bar extends Component {
               onChange={(e) => this.handleSearch(e, 'searchText')}
               margin="normal"
             />
+          </Typography>
+          <Typography type="title" color="inherit" className="spacer">
+              Title
           </Typography>
         </Toolbar>
       </AppBar>

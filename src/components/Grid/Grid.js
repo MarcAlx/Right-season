@@ -37,28 +37,28 @@ class Grid extends Component {
     return (
         <div>
             <GridList>
-            <GridListTile className="header" key="Subheader" cols={4}>
-                <Subheader component="div">{i18n.t('categories.vegetables')}</Subheader>
-            </GridListTile>
-            {vegetables}
+                <GridListTile className="header" key="Subheader">
+                    <Subheader component="div">{i18n.t('categories.vegetables')}</Subheader>
+                </GridListTile>
+                {vegetables}
             </GridList>
             <GridList>
-            <GridListTile className="header" key="Subheader" cols={4}>
-                <Subheader component="div">{i18n.t('categories.fruits')}</Subheader>
-            </GridListTile>
-            {fruits}
+                <GridListTile className="header" key="Subheader">
+                    <Subheader component="div">{i18n.t('categories.fruits')}</Subheader>
+                </GridListTile>
+                {fruits}
             </GridList>
             <GridList>
-            <GridListTile className="header" key="Subheader" cols={4}>
-                <Subheader component="div">{i18n.t('categories.mushrooms')}</Subheader>
-            </GridListTile>
-            {mushrooms}
+                <GridListTile className="header" key="Subheader">
+                    <Subheader component="div">{i18n.t('categories.mushrooms')}</Subheader>
+                </GridListTile>
+                {mushrooms}
             </GridList>
             <GridList>
-            <GridListTile className="header" key="Subheader" cols={4}>
-                <Subheader component="div">{i18n.t('categories.cereals')}</Subheader>
-            </GridListTile>
-            {cereals}
+                <GridListTile className="header" key="Subheader">
+                    <Subheader component="div">{i18n.t('categories.cereals')}</Subheader>
+                </GridListTile>
+                {cereals}
             </GridList>
         </div>
     );

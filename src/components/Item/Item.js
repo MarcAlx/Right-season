@@ -29,7 +29,7 @@ class Item extends Component {
                 image={"assets/images/"+this.props.data.image_url}
                 title={i18n.t("names."+this.props.data.name)}
                 />
-                <CardContent>
+                <CardContent className="content">
                     <Typography type="headline" component="h2">
                         {i18n.t("names."+this.props.data.name)}
                     </Typography>
