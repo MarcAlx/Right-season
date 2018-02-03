@@ -105,6 +105,15 @@
                 "bean": "Féveroles et fèves",
                 "mirabelle": "Mirabelle"
             },
+            "searchbar":{
+                "placeholder":"Rechercher"
+            },
+            "categories":{
+                "vegetables":"Légumes",
+                "cereals":"Céréales",
+                "mushrooms":"Champignons",
+                "fruits":"Fruits"
+            },
             "monthIndexes":{
                 "1":"Janvier",
                 "2":"Fevrier",
