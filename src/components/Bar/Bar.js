@@ -7,9 +7,12 @@ import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 
 import { connect } from 'react-redux';
-import { search } from '../../actions/AppActions';
+import { search, setInfoDrawerState } from '../../actions/AppActions';
 
 import PropTypes from 'prop-types';
+
+import IconButton from 'material-ui/IconButton';
+import InfoIcon from 'material-ui-icons/Info';
 
 import i18n from 'i18next';
 
@@ -24,7 +27,15 @@ class Bar extends Component {
     this.props.search(event.target.value);
   }
 
+  handleDrawerOpen() {
+    this.props.setInfoDrawerState(true);
+  }
+
   render() {
+    let menuButtonClass = "menuButton";
+    if(this.props.infoDrawerOpen==true){
+      menuButtonClass+=" hidden";
+    }
     return (
       <AppBar position="fixed" className="topBar">
         <Toolbar>
@@ -38,7 +49,16 @@ class Bar extends Component {
               onChange={(e) => this.handleSearch(e, 'searchText')}
               margin="normal"
             />
+          <Typography color="inherit" className="spacer">
           </Typography>
+          <IconButton
+                color="inherit"
+                aria-label="TODO"
+                onClick={() => this.handleDrawerOpen()}
+                className={menuButtonClass}
+              >
+                <InfoIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
     );
@@ -47,17 +67,22 @@ class Bar extends Component {
 
 Bar.propTypes={
   search: PropTypes.func.isRequired,
+  setInfoDrawerState: PropTypes.func.isRequired,
+  infoDrawerOpen:PropTypes.bool
 };
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     input:state.input,
+    infoDrawerOpen:state.infoDrawerOpen
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    search: (input) => dispatch(search(input))
+    search: (input) => dispatch(search(input)),
+    setInfoDrawerState: (open) => dispatch(setInfoDrawerState(open))
   };
 };
 

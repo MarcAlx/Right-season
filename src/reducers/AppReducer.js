@@ -7,6 +7,10 @@ export default function AppReducer(state=config.initialState, action) {
         case actionType.SEARCH:
             return Object.assign({}, state, {
                 input:action.input
+            });
+        case actionType.SET_INFODRAWER_STATE:
+            return Object.assign({}, state, {
+                infoDrawerOpen:action.infoDrawerOpen
             });    
         case actionType.SET_CONFIG:
             return Object.assign({}, state, {

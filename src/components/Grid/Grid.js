@@ -35,7 +35,7 @@ class Grid extends Component {
       (item) => <Item key={item.name} data={item}/>
     );
     return (
-        <div>
+        <div className="contentGrid">
             <GridList>
                 <GridListTile className="header" key="Subheader">
                     <Subheader component="div">{i18n.t('categories.vegetables')}</Subheader>

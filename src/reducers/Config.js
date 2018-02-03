@@ -1,5 +1,6 @@
 import innerConfig from "../innerConfig";
 export const initialState = {
+    infoDrawerOpen:false,
     input:"",
     //all data loaded
     allData:{},

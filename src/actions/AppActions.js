@@ -12,6 +12,17 @@ export function search(input) {
 }
 
 /**
+ * Set infor drawer state
+ * @param {*} isOpen 
+ */
+export function setInfoDrawerState(isOpen) {
+    return {
+        type: actionType.SET_INFODRAWER_STATE,
+        infoDrawerOpen:isOpen,
+    };
+}
+
+/**
  * Set source of data to pick
  * @param {*} data 
  */

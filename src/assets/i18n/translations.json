@@ -109,6 +109,9 @@
             "searchbar":{
                 "placeholder":"Rechercher"
             },
+            "infoDrawer":{
+                "header":"Informations"
+            },
             "categories":{
                 "vegetables":"Légumes",
                 "cereals":"Céréales",

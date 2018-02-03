@@ -7,6 +7,7 @@ import { blue } from 'material-ui/colors';
 import i18n from 'i18next';
 
 import Bar from '../Bar/Bar';
+import InfoDrawer from '../InfoDrawer/InfoDrawer';
 import Grid from '../Grid/Grid';
 
 const theme = createMuiTheme({
@@ -30,6 +31,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>   
         <div className="App">
           <Bar/>
+          <InfoDrawer/>
           <Grid/>
         </div>
       </MuiThemeProvider>
