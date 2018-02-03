@@ -51,17 +51,17 @@ Here are the fields of the data model and their signification
 
 There are some ready to use scripts define in `package.json`
 
-To build the with uncompressed sources
+To build the app with uncompressed sources
 
-    yarn run build
+    yarn build
 
 To build the app ready for release with minified and compressed sources
 
-    yarn run release
+    yarn release
 
 To lint your code
 
-    yarn run lint
+    yarn lint
 
 To run your code locally with uncompressed sources (on port 3000) :
 
