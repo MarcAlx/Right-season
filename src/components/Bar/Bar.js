@@ -28,16 +28,16 @@ class Bar extends Component {
     return (
       <AppBar position="fixed" className="topBar">
         <Toolbar>
-          <Typography type="title" color="inherit">
-            <TextField
+          <Typography type="title" color="inherit" >
+            {i18n.t('appName')}
+          </Typography>
+          <TextField
+              className="searchInput"
               id="searchText"
               label={i18n.t('searchbar.placeholder')}
               onChange={(e) => this.handleSearch(e, 'searchText')}
               margin="normal"
             />
-          </Typography>
-          <Typography type="title" color="inherit" className="spacer">
-              Title
           </Typography>
         </Toolbar>
       </AppBar>
