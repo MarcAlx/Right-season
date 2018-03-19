@@ -6,7 +6,17 @@ export default function AppReducer(state=config.initialState, action) {
     switch (action.type) {
         case actionType.SEARCH:
             return Object.assign({}, state, {
-                input:action.input
+                input:action.input,
+                currentData:{
+                    mushrooms:action.mushrooms,
+                    cereals:action.cereals,
+                    fruits:action.fruits,
+                    vegetables:action.vegetables
+                }
+            });
+        case actionType.FILTER:
+            return Object.assign({}, state, {
+                filter:action.filter
             });
         case actionType.SET_INFODRAWER_STATE:
             return Object.assign({}, state, {

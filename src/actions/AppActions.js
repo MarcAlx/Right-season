@@ -1,14 +1,63 @@
 import * as actionType from './ActionType';
+import i18n from 'i18next';
+
+/**
+ * @param {*} input 
+ */
+export function search(input) {
+    return (dispatch, getState) => {
+        let source = getState().source;
+        let filter = getState().filter;
+        let data = getState().allData[source];
+
+        let res={
+            "mushrooms":[],
+            "cereals":[],
+            "fruits":[],
+            "vegetables":[]
+        };
+
+        let done = [];
+
+        for(let key in res){
+            for(let i = 0;i<filter.length;i++){
+                let tmp = filter[i];
+                for(let i = 0;i<data[key].length;i++){
+                    let item = data[key][i];
+                    if(done.indexOf(item.name)===-1
+                    && item.availability.indexOf(tmp)!=-1
+                    && (input==="" || i18n.t("names."+item.name).toLowerCase().indexOf(input.toLowerCase())!==-1)){
+                        res[key].push(item);
+                        done.push(item.name);
+                    }
+                }
+            }
+        }
+        
+        return dispatch({
+            type: actionType.SEARCH,
+            input:input,
+            mushrooms:res.mushrooms,
+            cereals:res.cereals,
+            fruits:res.fruits,
+            vegetables:res.vegetables
+        });
+    }
+}
 
 /**
  * TODO
  * @param {*} input 
  */
-export function search(input) {
-    return {
-        type: actionType.SEARCH,
-        input:input
-    };
+export function filter(f) {
+    return (dispatch, getState) => {
+        dispatch({
+            type: actionType.FILTER,
+            filter:f
+        });
+        //update res via search
+        return dispatch(search(getState().input));
+    }
 }
 
 /**

@@ -107,7 +107,12 @@
                 "mirabelle": "Mirabelle"
             },
             "searchbar":{
-                "placeholder":"Rechercher"
+                "placeholder":"Rechercher",
+                "filter":{
+                    "thismonth":"Ce mois",
+                    "nextmonth":"Le mois prochain",
+                    "allyear":"Toute l'année"
+                }
             },
             "infoDrawer":{
                 "header":"Informations"

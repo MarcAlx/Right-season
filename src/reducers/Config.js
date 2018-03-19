@@ -1,6 +1,7 @@
 import innerConfig from "../innerConfig";
 export const initialState = {
     infoDrawerOpen:false,
+    filter:[new Date().getMonth()+1],
     input:"",
     //all data loaded
     allData:{},
