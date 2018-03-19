@@ -14,6 +14,8 @@ import i18n from 'i18next';
 
 import PropTypes from 'prop-types';
 
+import ReactMarkdown from 'react-markdown';
+
 class InfoDrawer extends Component {
   constructor(props){
     super(props);
@@ -38,7 +40,7 @@ class InfoDrawer extends Component {
             </span>
           </div>
           <Divider />
-          TODO
+          <ReactMarkdown className="infoArea" source={i18n.t("infoDrawer.info")} />
         </div>
       </Drawer>
 

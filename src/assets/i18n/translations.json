@@ -115,7 +115,8 @@
                 }
             },
             "infoDrawer":{
-                "header":"Informations"
+                "header":"Informations",
+                "info":"# Section 1\n## Section 2"
             },
             "categories":{
                 "vegetables":"Légumes",
