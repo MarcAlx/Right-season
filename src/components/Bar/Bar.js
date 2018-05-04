@@ -51,7 +51,7 @@ class Bar extends Component {
           <Typography type="title" color="inherit" >
             {i18n.t('appName')}
           </Typography>
-          <Select
+          <Select className="sourceSelect"
             value={this.props.source.toString()}
             onChange={(evt)=>{
               this.props.setSource(evt.target.value);
