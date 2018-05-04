@@ -116,7 +116,7 @@
             },
             "infoDrawer":{
                 "header":"Informations",
-                "info":"# Section 1\n## Section 2"
+                "info":"# La bonne saison\n Ce projet permet de savoir facilement si un fruit/légume/céreale/champignon est de saison.\n ## License\n Ce projet est disponible sous license MIT [içi](https://github.com/MarcAlx/Right-season.git)\n\n Les images sont disponibles sous licence [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.fr).\n\n Les informations proviennent de [https://www.greenpeace.fr/calendrier-fruits-legumes-de-saisons/](https://www.greenpeace.fr/calendrier-fruits-legumes-de-saisons/) et de connaissances communes."
             },
             "categories":{
                 "vegetables":"Légumes",
