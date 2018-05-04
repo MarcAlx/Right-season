@@ -146,6 +146,9 @@
             "item":{
                  "receipButtonTitle":"Recettes",
                  "urlButtonTitle":"Wikipédia"
+            },
+            "grid":{
+                "noResults":"Aucun résultat"
             }
         }
     },

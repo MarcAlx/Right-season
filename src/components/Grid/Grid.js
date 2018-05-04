@@ -36,30 +36,36 @@ class Grid extends Component {
     );
     return (
         <div className="contentGrid">
-            <GridList>
+            <GridList className={vegetables.length>0 ? "" : "hidden"}>
                 <GridListTile className="header" key="Subheader">
                     <Subheader component="div">{i18n.t('categories.vegetables')}</Subheader>
                 </GridListTile>
                 {vegetables}
             </GridList>
-            <GridList>
+            <GridList className={fruits.length>0 ? "" : "hidden"}>
                 <GridListTile className="header" key="Subheader">
                     <Subheader component="div">{i18n.t('categories.fruits')}</Subheader>
                 </GridListTile>
                 {fruits}
             </GridList>
-            <GridList>
+            <GridList className={mushrooms.length>0 ? "" : "hidden"}>
                 <GridListTile className="header" key="Subheader">
                     <Subheader component="div">{i18n.t('categories.mushrooms')}</Subheader>
                 </GridListTile>
                 {mushrooms}
             </GridList>
-            <GridList>
+            <GridList className={cereals.length>0 ? "" : "hidden"}>
                 <GridListTile className="header" key="Subheader">
                     <Subheader component="div">{i18n.t('categories.cereals')}</Subheader>
                 </GridListTile>
                 {cereals}
             </GridList>
+            {
+              (cereals.length===0 && mushrooms.length===0 && fruits.length===0 && cereals.length===0) ?
+              <div className="noResults">{i18n.t('grid.noResults')}</div>
+              :
+              <div/>
+            }
         </div>
     );
   }
