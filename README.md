@@ -1,5 +1,7 @@
 # Right season
 
+![screenshot, default, main menu](./doc/screenshot.png)
+
 :green_apple: :sweet_potato: :ear_of_rice: :mushroom: A simple react app that's mean't to answer only one question : is it the right season to buy this fruit/vegetable/cereal/mushroom ?
 
 :tractor: Currently under devlopment, pull request for new feature or whole refactor are not accepted by now.
