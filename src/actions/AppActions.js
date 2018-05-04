@@ -76,9 +76,12 @@ export function setInfoDrawerState(isOpen) {
  * @param {*} data 
  */
 export function setSource(sourceName){
-    return {
-        type: actionType.SET_SOURCE,
-        source:sourceName
+    return (dispatch, getState) => {
+        dispatch({
+            type: actionType.SET_SOURCE,
+            source:sourceName
+        });
+        dispatch(search(getState().input));
     };
 }
 

@@ -7,7 +7,7 @@ import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 
 import { connect } from 'react-redux';
-import { search, filter, setInfoDrawerState } from '../../actions/AppActions';
+import { search, filter, setInfoDrawerState, setSource } from '../../actions/AppActions';
 
 import PropTypes from 'prop-types';
 
@@ -40,12 +40,25 @@ class Bar extends Component {
     let months = [1,2,3,4,5,6,7,8,9,10,11,12];
     let thisMonth = new Date().getMonth()+1;
     let nextMonth = (thisMonth+1)%12;
+
+    let sources = [];
+    for(let src in this.props.allData){
+      sources.push(<MenuItem key={src} value={src}>{src}</MenuItem>);
+    }
     return (
       <AppBar position="fixed" className="topBar">
         <Toolbar>
           <Typography type="title" color="inherit" >
             {i18n.t('appName')}
           </Typography>
+          <Select
+            value={this.props.source.toString()}
+            onChange={(evt)=>{
+              this.props.setSource(evt.target.value);
+            }}
+            >
+            {sources}
+          </Select>
           <TextField
               className="searchInput"
               id="searchText"
@@ -88,8 +101,11 @@ Bar.propTypes={
   search: PropTypes.func.isRequired,
   doFilter: PropTypes.func.isRequired,
   setInfoDrawerState: PropTypes.func.isRequired,
-  infoDrawerOpen:PropTypes.bool,
-  filterString:PropTypes.array
+  infoDrawerOpen: PropTypes.bool,
+  filterString: PropTypes.array,
+  allData: PropTypes.object,
+  source: PropTypes.string,
+  setSource: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -97,7 +113,9 @@ const mapStateToProps = (state) => {
   return {
     input:state.input,
     filterString:state.filter,
-    infoDrawerOpen:state.infoDrawerOpen
+    infoDrawerOpen:state.infoDrawerOpen,
+    allData:state.allData,
+    source:state.source
   };
 };
 
@@ -105,6 +123,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     search: (input) => dispatch(search(input)),
     doFilter: (f) => dispatch(filter(f)),
+    setSource: (source)=> dispatch(setSource(source)),
     setInfoDrawerState: (open) => dispatch(setInfoDrawerState(open))
   };
 };
