@@ -5,6 +5,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
+import Grid from 'material-ui/Grid';
 
 import { connect } from 'react-redux';
 import { search, filter, setInfoDrawerState, setSource } from '../../actions/AppActions';
@@ -48,49 +49,59 @@ class Bar extends Component {
     return (
       <AppBar position="fixed" className="topBar">
         <Toolbar>
-          <Typography type="title" color="inherit" >
-            {i18n.t('appName')}
-          </Typography>
-          <Select className="sourceSelect"
-            value={this.props.source.toString()}
-            onChange={(evt)=>{
-              this.props.setSource(evt.target.value);
-            }}
-            >
-            {sources}
-          </Select>
-          <TextField
-              className="searchInput"
-              id="searchText"
-              label={i18n.t('searchbar.placeholder')}
-              onChange={(e) => this.handleSearch(e, 'searchText')}
-              margin="normal"
-            />
-          <Select
-            value={this.props.filterString.toString()}
-            onChange={(evt)=>{
-              this.props.doFilter(evt.target.value.split(',').map((month)=> parseInt(month)));
-            }}
-            >
-            <MenuItem key="tm" value={[thisMonth].toString()}>{i18n.t('searchbar.filter.thismonth')+' ('+i18n.t("monthIndexes."+thisMonth)+')'}</MenuItem>
-            <MenuItem key="nm" value={[nextMonth].toString()}>{i18n.t('searchbar.filter.nextmonth')+' ('+i18n.t("monthIndexes."+nextMonth)+')'}</MenuItem>
-            <MenuItem key="all" value={months.toString()}>{i18n.t('searchbar.filter.allyear')}</MenuItem>
-            {months.map((month)=>{
-              if(month!=thisMonth && month!=nextMonth){
-                return <MenuItem key={[month].toString()} value={month}>{i18n.t("monthIndexes."+month)}</MenuItem>;
-              }
-            })}
-          </Select>
-          <Typography color="inherit" className="spacer">
-          </Typography>
-          <IconButton
-                color="inherit"
-                aria-label="TODO"
-                onClick={() => this.handleDrawerOpen()}
-                className={menuButtonClass}
-              >
-                <InfoIcon />
-          </IconButton>
+          <Grid className="root" container spacing={0}>
+            <Grid item xs={6} sm={6} md={3} lg={3}>
+              <Typography xs={12} type="title" color="inherit" >
+                {i18n.t('appName')}
+              </Typography>
+            </Grid>
+            <Grid item xs={6} sm={6} md={3} lg={3}>
+              <Select className="sourceSelect"
+                value={this.props.source.toString()}
+                onChange={(evt)=>{
+                  this.props.setSource(evt.target.value);
+                }}
+                >
+                {sources}
+              </Select>
+            </Grid>
+            <Grid item xs={6} sm={6} md={3} lg={3}>
+              <TextField
+                  className="searchInput"
+                  id="searchText"
+                  label={i18n.t('searchbar.placeholder')}
+                  onChange={(e) => this.handleSearch(e, 'searchText')}
+                  margin="normal"
+              />
+            </Grid>
+            <Grid item xs={6} sm={6} md={3} lg={3}>
+              <Select
+                value={this.props.filterString.toString()}
+                onChange={(evt)=>{
+                  this.props.doFilter(evt.target.value.split(',').map((month)=> parseInt(month)));
+                }}
+                >
+                <MenuItem key="tm" value={[thisMonth].toString()}>{i18n.t('searchbar.filter.thismonth')+' ('+i18n.t("monthIndexes."+thisMonth)+')'}</MenuItem>
+                <MenuItem key="nm" value={[nextMonth].toString()}>{i18n.t('searchbar.filter.nextmonth')+' ('+i18n.t("monthIndexes."+nextMonth)+')'}</MenuItem>
+                <MenuItem key="all" value={months.toString()}>{i18n.t('searchbar.filter.allyear')}</MenuItem>
+                {months.map((month)=>{
+                  if(month!=thisMonth && month!=nextMonth){
+                    return <MenuItem key={[month].toString()} value={month}>{i18n.t("monthIndexes."+month)}</MenuItem>;
+                  }
+                })}
+              </Select>
+            </Grid>
+          </Grid>
+          <Grid className="drawerButtonContainer" item xs={1} sm={1} md={2} lg={2}>
+              <IconButton
+                      color="inherit"
+                      aria-label="TODO"
+                      onClick={() => this.handleDrawerOpen()}
+                      className={menuButtonClass}
+                    >
+                  <InfoIcon />
+              </IconButton>
+            </Grid>
         </Toolbar>
       </AppBar>
     );
