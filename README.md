@@ -133,7 +133,7 @@ i18n is done thanks to `react-i18next` for now there's only one supported locale
 1. [done] ~~i18n~~
 2. [done] ~~Allow configuration (i18n && variables) without rebuilding~~
 3. [done] ~~Allow different countries indepently from language~~
-4. Reduce image size via [Guetzli](https://github.com/google/guetzli)
+4. [dine] ~~Reduce image size via [Guetzli](https://github.com/google/guetzli)~~
 5. Publish a demo of this app
 
 ## Based on 
