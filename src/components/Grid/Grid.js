@@ -41,7 +41,7 @@ class Grid extends Component {
             <MuiGrid container>
               <GridList xs={12} sm={12} md={12} lg={12} className={vegetables.length>0 ? "" : "hidden"}>
                   <GridListTile className="header" key="Subheader">
-                      <Subheader component="div">{i18n.t('categories.vegetables')}</Subheader>
+                      <Subheader className="headerText" component="div">{i18n.t('categories.vegetables')}</Subheader>
                   </GridListTile>
                   {vegetables}
               </GridList>
