@@ -6,6 +6,7 @@ import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import {configureI18n} from  './i18n/i18n';
 import {setConfig,initData} from './actions/AppActions';
+require("./extensions.js");
 
 const store = configureStore();
 

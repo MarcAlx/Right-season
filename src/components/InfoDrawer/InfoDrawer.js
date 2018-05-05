@@ -9,6 +9,7 @@ import ChevronRightIcon from 'material-ui-icons/ChevronRight';
 
 import { connect } from 'react-redux';
 import { setInfoDrawerState } from '../../actions/AppActions';
+import info from '../../../package.json';
 
 import i18n from 'i18next';
 
@@ -40,7 +41,7 @@ class InfoDrawer extends Component {
             </span>
           </div>
           <Divider />
-          <ReactMarkdown className="infoArea" source={i18n.t("infoDrawer.info")} />
+          <ReactMarkdown className="infoArea" source={i18n.t("infoDrawer.info").format(i18n.t("appName"),info.version)} />
         </div>
       </Drawer>
 
