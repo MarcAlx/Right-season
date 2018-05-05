@@ -111,12 +111,12 @@
                 "filter":{
                     "thismonth":"Ce mois",
                     "nextmonth":"Le mois prochain",
-                    "allyear":"Toute l'année"
+                    "allyear":"Toute l'année (pas de filtre)"
                 }
             },
             "infoDrawer":{
                 "header":"Informations",
-                "info":"# La bonne saison\n Ce projet permet de savoir facilement si un fruit/légume/céreale/champignon est de saison.\n ## Licence\n Ce projet est disponible sous license MIT [içi](https://github.com/MarcAlx/Right-season.git)\n\n Les images sont disponibles sous licence [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.fr).\n\n Les informations proviennent de [https://www.greenpeace.fr/calendrier-fruits-legumes-de-saisons/](https://www.greenpeace.fr/calendrier-fruits-legumes-de-saisons/) et de connaissances communes."
+                "info":"# La bonne saison\n Ce projet permet de savoir facilement si un fruit/légume/céreale/champignon est de saison.\n ## Licence\n Ce projet est disponible sous license MIT [içi](https://github.com/MarcAlx/Right-season.git)\n\n Les images sont disponibles sous licence [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.fr).\n\n Les informations proviennent de [https://www.greenpeace.fr/calendrier-fruits-legumes-de-saisons/](https://www.greenpeace.fr/calendrier-fruits-legumes-de-saisons/) et de connaissances communes.\n\n Created by Marc_Alx"
             },
             "categories":{
                 "vegetables":"Légumes",
