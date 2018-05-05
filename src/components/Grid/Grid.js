@@ -45,31 +45,31 @@ class Grid extends Component {
                   </GridListTile>
                   {vegetables}
               </GridList>
+              <GridList xs={12} sm={12} md={12} lg={12} className={fruits.length>0 ? "" : "hidden"}>
+                  <GridListTile className="header" key="Subheader">
+                      <Subheader component="div">{i18n.t('categories.fruits')}</Subheader>
+                  </GridListTile>
+                  {fruits}
+              </GridList>
+              <GridList xs={12} sm={12} md={12} lg={12} className={mushrooms.length>0 ? "" : "hidden"}>
+                  <GridListTile className="header" key="Subheader">
+                      <Subheader component="div">{i18n.t('categories.mushrooms')}</Subheader>
+                  </GridListTile>
+                  {mushrooms}
+              </GridList>
+              <GridList xs={12} sm={12} md={12} lg={12} className={cereals.length>0 ? "" : "hidden"}>
+                  <GridListTile className="header" key="Subheader">
+                      <Subheader component="div">{i18n.t('categories.cereals')}</Subheader>
+                  </GridListTile>
+                  {cereals}
+              </GridList>
+              {
+                (cereals.length===0 && mushrooms.length===0 && fruits.length===0 && cereals.length===0) ?
+                <div className="noResults">{i18n.t('grid.noResults')}</div>
+                :
+                <div/>
+              }
             </MuiGrid>
-            <GridList xs={12} sm={12} md={12} lg={12} className={fruits.length>0 ? "" : "hidden"}>
-                <GridListTile className="header" key="Subheader">
-                    <Subheader component="div">{i18n.t('categories.fruits')}</Subheader>
-                </GridListTile>
-                {fruits}
-            </GridList>
-            <GridList xs={12} sm={12} md={12} lg={12} className={mushrooms.length>0 ? "" : "hidden"}>
-                <GridListTile className="header" key="Subheader">
-                    <Subheader component="div">{i18n.t('categories.mushrooms')}</Subheader>
-                </GridListTile>
-                {mushrooms}
-            </GridList>
-            <GridList xs={12} sm={12} md={12} lg={12} className={cereals.length>0 ? "" : "hidden"}>
-                <GridListTile className="header" key="Subheader">
-                    <Subheader component="div">{i18n.t('categories.cereals')}</Subheader>
-                </GridListTile>
-                {cereals}
-            </GridList>
-            {
-              (cereals.length===0 && mushrooms.length===0 && fruits.length===0 && cereals.length===0) ?
-              <div className="noResults">{i18n.t('grid.noResults')}</div>
-              :
-              <div/>
-            }
         </div>
     );
   }
