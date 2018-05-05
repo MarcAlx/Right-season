@@ -42,6 +42,18 @@ class Bar extends Component {
     let thisMonth = new Date().getMonth()+1;
     let nextMonth = (thisMonth+1)%12;
 
+    let filters = [
+      <MenuItem key="tm" value={[thisMonth].toString()}>{i18n.t('searchbar.filter.thismonth')+' ('+i18n.t("monthIndexes."+thisMonth)+')'}</MenuItem>,
+      <MenuItem key="nm" value={[nextMonth].toString()}>{i18n.t('searchbar.filter.nextmonth')+' ('+i18n.t("monthIndexes."+nextMonth)+')'}</MenuItem>,
+      <MenuItem key="all" value={months.toString()}>{i18n.t('searchbar.filter.allyear')}</MenuItem>
+    ];
+
+    months.map((month)=>{
+      if(month!=thisMonth && month!=nextMonth){
+        filters.push(<MenuItem key={[month].toString()} value={[month].toString()}>{i18n.t("monthIndexes."+month)}</MenuItem>);
+      }
+    })
+
     let sources = [];
     for(let src in this.props.allData){
       sources.push(<MenuItem key={src} value={src}>{src}</MenuItem>);
@@ -81,21 +93,14 @@ class Bar extends Component {
                   this.props.doFilter(evt.target.value.split(',').map((month)=> parseInt(month)));
                 }}
                 >
-                <MenuItem key="tm" value={[thisMonth].toString()}>{i18n.t('searchbar.filter.thismonth')+' ('+i18n.t("monthIndexes."+thisMonth)+')'}</MenuItem>
-                <MenuItem key="nm" value={[nextMonth].toString()}>{i18n.t('searchbar.filter.nextmonth')+' ('+i18n.t("monthIndexes."+nextMonth)+')'}</MenuItem>
-                <MenuItem key="all" value={months.toString()}>{i18n.t('searchbar.filter.allyear')}</MenuItem>
-                {months.map((month)=>{
-                  if(month!=thisMonth && month!=nextMonth){
-                    return <MenuItem key={[month].toString()} value={month}>{i18n.t("monthIndexes."+month)}</MenuItem>;
-                  }
-                })}
+                {filters}
               </Select>
             </Grid>
           </Grid>
           <Grid className="drawerButtonContainer" item xs={1} sm={1} md={2} lg={2}>
               <IconButton
                       color="inherit"
-                      aria-label="TODO"
+                      aria-label=""
                       onClick={() => this.handleDrawerOpen()}
                       className={menuButtonClass}
                     >
