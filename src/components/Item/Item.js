@@ -44,7 +44,7 @@ class Item extends Component {
                     <Button target="_blank" href={this.props.data.url} dense color="primary">
                         {i18n.t("item.urlButtonTitle")}
                     </Button>
-                    <Button target="_blank" href={i18n.t("receipProvider.baseURL")+this.props.data.name} dense color="primary">
+                    <Button target="_blank" href={i18n.t("receipProvider.baseURL")+i18n.t("names."+this.props.data.name)} dense color="primary">
                         {i18n.t("item.receipButtonTitle")}
                     </Button>
                 </CardActions>
