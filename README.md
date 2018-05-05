@@ -2,9 +2,9 @@
 
 :green_apple: :sweet_potato: :ear_of_rice: :mushroom: A simple react app that's mean't to answer only one question : is it the right season to buy this fruit/vegetable/cereal/mushroom ?
 
-![screenshot, default, main menu](./doc/screenshot.png)
+[Test here !](https://marcalx.github.io/demo-right-season/)
 
-:tractor: Currently under devlopment, pull request for new feature or whole refactor are not accepted by now.
+![screenshot, default, main menu](./doc/screenshot.png)
 
 :tractor: Searchin for chinese artichoke CC0 (or equivalent) jpg :tractor:
 
@@ -134,7 +134,7 @@ i18n is done thanks to `react-i18next` for now there's only one supported locale
 2. [done] ~~Allow configuration (i18n && variables) without rebuilding~~
 3. [done] ~~Allow different countries indepently from language~~
 4. [dine] ~~Reduce image size via [Guetzli](https://github.com/google/guetzli)~~
-5. Publish a demo of this app
+5. [done] ~~Publish a demo of this app~~
 
 ## Based on 
 
