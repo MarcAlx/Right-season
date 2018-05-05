@@ -11,14 +11,14 @@
     "yarn"
   ],
   "bugs": {
-    "url": "https://github.com/MarcAlx/simple-react-starterkit/issues"
+    "url": "https://github.com/MarcAlx/Right-season/issues"
   },
   "author": {
     "name": "Marc_Alx"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MarcAlx/simple-react-starterkit"
+    "url": "https://github.com/MarcAlx/Right-season"
   },
   "engines": {
     "node": "*"
