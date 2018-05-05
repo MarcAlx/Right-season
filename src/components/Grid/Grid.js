@@ -47,19 +47,19 @@ class Grid extends Component {
               </GridList>
               <GridList xs={12} sm={12} md={12} lg={12} className={fruits.length>0 ? "" : "hidden"}>
                   <GridListTile className="header" key="Subheader">
-                      <Subheader component="div">{i18n.t('categories.fruits')}</Subheader>
+                      <Subheader className="headerText" component="div">{i18n.t('categories.fruits')}</Subheader>
                   </GridListTile>
                   {fruits}
               </GridList>
               <GridList xs={12} sm={12} md={12} lg={12} className={mushrooms.length>0 ? "" : "hidden"}>
                   <GridListTile className="header" key="Subheader">
-                      <Subheader component="div">{i18n.t('categories.mushrooms')}</Subheader>
+                      <Subheader className="headerText" component="div">{i18n.t('categories.mushrooms')}</Subheader>
                   </GridListTile>
                   {mushrooms}
               </GridList>
               <GridList xs={12} sm={12} md={12} lg={12} className={cereals.length>0 ? "" : "hidden"}>
                   <GridListTile className="header" key="Subheader">
-                      <Subheader component="div">{i18n.t('categories.cereals')}</Subheader>
+                      <Subheader className="headerText" component="div">{i18n.t('categories.cereals')}</Subheader>
                   </GridListTile>
                   {cereals}
               </GridList>
