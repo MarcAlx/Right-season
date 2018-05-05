@@ -1,7 +1,7 @@
 {
-  "name": "sample",
+  "name": "Right Season",
   "version": "1.0.2",
-  "description": "A simple react project",
+  "description": "A simple react app that's mean't to answer only one question : is it the right season to buy this fruit/vegetable/cereal/mushroom ?",
   "keywords": [
     "react",
     "starter-kit",
