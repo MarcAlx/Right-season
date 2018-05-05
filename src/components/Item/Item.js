@@ -3,6 +3,7 @@ import "./Item.less"
 
 import PropTypes from 'prop-types';
 
+import Grid from 'material-ui/Grid';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
@@ -22,7 +23,7 @@ class Item extends Component {
         month=><span className="monthTag" key={month}>{i18n.t("monthIndexes."+month)}</span>
     )
     return (
-        <div className="Item">
+        <Grid className="Item" item xs={12} sm={6} md={4} lg={3}>
             <Card className="card">
                 <CardMedia
                 className="media"
@@ -48,7 +49,7 @@ class Item extends Component {
                     </Button>
                 </CardActions>
             </Card>
-        </div>
+        </Grid>
     );
   }
 }

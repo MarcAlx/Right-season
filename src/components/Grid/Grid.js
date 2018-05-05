@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 
 import Item from '../Item/Item';
 
+import MuiGrid from 'material-ui/Grid';
+
 import { GridList, GridListTile } from 'material-ui/GridList';
 import Subheader from 'material-ui/List/ListSubheader';
 
@@ -36,25 +38,27 @@ class Grid extends Component {
     );
     return (
         <div className="contentGrid">
-            <GridList className={vegetables.length>0 ? "" : "hidden"}>
-                <GridListTile className="header" key="Subheader">
-                    <Subheader component="div">{i18n.t('categories.vegetables')}</Subheader>
-                </GridListTile>
-                {vegetables}
-            </GridList>
-            <GridList className={fruits.length>0 ? "" : "hidden"}>
+            <MuiGrid container>
+              <GridList xs={12} sm={12} md={12} lg={12} className={vegetables.length>0 ? "" : "hidden"}>
+                  <GridListTile className="header" key="Subheader">
+                      <Subheader component="div">{i18n.t('categories.vegetables')}</Subheader>
+                  </GridListTile>
+                  {vegetables}
+              </GridList>
+            </MuiGrid>
+            <GridList xs={12} sm={12} md={12} lg={12} className={fruits.length>0 ? "" : "hidden"}>
                 <GridListTile className="header" key="Subheader">
                     <Subheader component="div">{i18n.t('categories.fruits')}</Subheader>
                 </GridListTile>
                 {fruits}
             </GridList>
-            <GridList className={mushrooms.length>0 ? "" : "hidden"}>
+            <GridList xs={12} sm={12} md={12} lg={12} className={mushrooms.length>0 ? "" : "hidden"}>
                 <GridListTile className="header" key="Subheader">
                     <Subheader component="div">{i18n.t('categories.mushrooms')}</Subheader>
                 </GridListTile>
                 {mushrooms}
             </GridList>
-            <GridList className={cereals.length>0 ? "" : "hidden"}>
+            <GridList xs={12} sm={12} md={12} lg={12} className={cereals.length>0 ? "" : "hidden"}>
                 <GridListTile className="header" key="Subheader">
                     <Subheader component="div">{i18n.t('categories.cereals')}</Subheader>
                 </GridListTile>
